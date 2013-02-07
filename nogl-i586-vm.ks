@@ -38,10 +38,12 @@ qt5-plugin-imageformat-jpeg
 qt5-plugin-platform-eglfs
 qt5-qtdeclarative-qmlscene
 qt5-qtdeclarative-import-qtquick2plugin
-qt5-qtwayland-wayland_egl
+qt5-qtwayland-nogl
+qt5-qtwayland-nogl-examples
 qt5-qtdeclarative-import-window2
 qt5-plugin-generic-evdev
-zephyr-session
+qt5-plugin-platform-linuxfb
+qt5-qtquick1
 xkeyboard-config
 liberation-sans-fonts
 
@@ -54,7 +56,6 @@ echo -n "Rebuilding db using target rpm.."
 rm -f /var/lib/rpm/__db*
 rpm --rebuilddb
 echo "done"
-
 ## end rpm-rebuilddb.post
 
 ## prelink.post from mer-kickstarter-configs package
@@ -66,7 +67,6 @@ if [ -x /usr/sbin/prelink ]; then
 fi
 ## end prelink.post
 
-echo 'QT_QPA_EGLFS_DEPTH=16' > /etc/sysconfig/zephyr-ui
 
 %end
 
